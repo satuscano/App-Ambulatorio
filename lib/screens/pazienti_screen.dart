@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
-import '../entities/paziente.dart';
-import 'dettaglio_paziente_screen.dart';
+import '../../entities/paziente.dart';
+import 'dettaglio_paziente.dart';
 
 class PazientiScreen extends StatefulWidget {
   const PazientiScreen({super.key});
