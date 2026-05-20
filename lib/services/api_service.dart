@@ -12,13 +12,15 @@ class ApiService {
     final url = Uri.parse('$baseUrl?action=getEsami');
 
     try {
+      // await serve per ottenere la risposta dal server prima di procedere
       final response = await http.get(url);
 
+      // se il serve da l'ok (200) decodifica il json e crea una lista di esami
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
+        final data = jsonDecode(response.body); // decodifica il json
         final list = (data['esami'] as List)
-            .map((e) => Esame.fromJson(e))
-            .toList();
+            .map((e) => Esame.fromJson(e)) // .map: da json a Esame
+            .toList(); // .toList: da Iterable (map) a List (array di esami)
 
         return list;
       }

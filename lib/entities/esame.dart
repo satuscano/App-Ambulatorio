@@ -1,6 +1,6 @@
 class Esame {
-  final int codiceEsame;
-  final int codiceAmbulatorio;
+  final String codiceEsame;
+  final String codiceAmbulatorio;
   final String codiceMedico;
   final String codiceFiscale;
   final String diagnosi;
@@ -15,6 +15,7 @@ class Esame {
     required this.referto,
   });
 
+  // la factory serve per creare un oggetto Esame a partire da una mappa (come json)
   factory Esame.fromJson(Map<String, dynamic> json) {
     return Esame(
       codiceEsame: json['codiceEsame'],
@@ -26,6 +27,7 @@ class Esame {
     );
   }
 
+  // la Map serve a convertire un oggetto Esame in una mappa (contrario di factory)
   Map<String, dynamic> toJson() {
     return {
       'codiceEsame': codiceEsame,
